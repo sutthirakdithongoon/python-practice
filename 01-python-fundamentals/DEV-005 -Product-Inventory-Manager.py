@@ -142,3 +142,39 @@ print("Total products :", len(stocks))
 print("Total inventory value :", total_value)
 print("Low stock items :", low_stock ) 
 print("Out of stock items :" ,out_stock )    
+
+
+
+
+
+orders = []
+total_paid = 0
+status_paid = 0
+status_pending = 0
+
+num_order = int(input("Number of orders:" ))
+
+for i in range(num_order):
+       customer = input("Customer: ")
+       amount = float(input("Amount : "))
+       status = input("Status : ")
+       order = {"customer": customer, "amount": amount, "status": status } 
+       orders.append(order)
+for order in orders:
+       print (f"Customer: {order['customer']}, Amount : {order['amount']}, Status : {order['status']}")
+       if order["status"] == "Paid":
+            status_paid = status_paid +1
+            total_paid = total_paid + order["amount"]
+       elif order["status"] == "Pending":
+            status_pending = status_pending +1
+       else :
+            print("Status error please check ")
+
+print("Total orders : ", len(orders))
+print("Total paid amount : ", total_paid)
+print("Paid orders : ", status_paid)
+print("Pending orders : ", status_pending)
+
+
+
+
