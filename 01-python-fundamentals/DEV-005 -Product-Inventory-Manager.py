@@ -97,5 +97,48 @@ print ("Total items: ", len(expenses) )
 
 
 
+# รับจำนวนสินค้าทั้งหมดจากผู้ใช้
+# [ ] ใช้ Loop รับชื่อ ราคา และจำนวนคงเหลือของแต่ละสินค้า
+# [ ] เก็บสินค้าแต่ละรายการเป็น Dictionary และเพิ่มลง List
+# [ ] ใช้ Loop แสดงชื่อ ราคา และจำนวนคงเหลือของสินค้าทั้งหมด
+# [ ] แสดงสถานะสินค้าโดยใช้เงื่อนไข Stock Status
+# [ ] คำนวณมูลค่าสินค้าคงคลังรวมด้วย Accumulator
+# [ ] นับจำนวนสินค้าที่มีสถานะ Low Stock ด้วย Counter
+# [ ] นับจำนวนสินค้าที่มีสถานะ Out of Stock ด้วย Counter
+# [ ] แสดงจำนวนประเภทสินค้าทั้งหมดด้วย len()
+# [ ] รองรับกรณีไม่มีสินค้าเลย (0 รายการ)
 
 
+
+
+
+stocks = []
+total_value = 0
+low_stock = 0
+out_stock = 0
+number_product = int(input("number of product :"))
+
+for i in range(number_product):
+    name = input("Name : ")
+    price = float(input("Price : "))
+    quantity = int(input("Quantity : "))
+    stock = {"name": name, "price": price, "quantity": quantity}
+    stocks.append(stock)
+for stock in stocks:
+    print("Name :", stock["name"])
+    print("Price :", stock["price"])
+    print("quantity :",  stock["quantity"])
+    if stock ["quantity"] > 5 :
+       print ("Status :  In Stock")
+    elif stock ["quantity"] == 0 :
+          out_stock = out_stock +1 
+          print ("Status : Out of Stock")
+    else :
+          low_stock = low_stock+1
+          print ("Status : Low Stock")
+    total_value = total_value +  stock["quantity"]*stock["price"] 
+
+print("Total products :", len(stocks))
+print("Total inventory value :", total_value)
+print("Low stock items :", low_stock ) 
+print("Out of stock items :" ,out_stock )    
