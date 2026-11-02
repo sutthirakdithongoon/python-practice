@@ -25,6 +25,7 @@
 
 product_number = int(input("Number of products: "))
 count = 0
+grand_total = 0
 while count < product_number:
     count = count + 1
     print("Product", count)
@@ -33,9 +34,7 @@ while count < product_number:
     quantity = int(input("Quantity: "))
     subtotal = price * quantity
     print("Subtotal:", subtotal)
-    grand_total = 0
     grand_total = grand_total + subtotal
-
 
 print("Grand total:", grand_total)
 

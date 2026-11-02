@@ -57,4 +57,45 @@ for student in students:
 print(f"\nTotal number of students: {len(students)}")
 
 passing_students = [student for student in students if student["score"] >= 50]
-print(f"Number of passing students: {len(passing_students)}")
+print(f"Number of passing students: {len(passing_students)}") 
+
+
+
+
+
+# Requirements
+# - REQ-01: รับจำนวนรายการรายจ่ายจากผู้ใช้
+# - REQ-02: สร้าง List ว่างเพื่อเก็บรายจ่ายทั้งหมด
+# - REQ-03: ใช้ Loop รับชื่อรายการ (name) และจำนวนเงิน (amount) ซึ่งเป็น float
+# - REQ-04: เก็บรายจ่ายแต่ละรายการเป็น Dictionary ที่มี Key name และ amount
+# - REQ-05: เพิ่ม Dictionary แต่ละรายการเข้า List ด้วย append()
+# - REQ-06: หลังรับข้อมูลครบ ใช้ Loop อีกชุดแสดงชื่อและจำนวนเงินของแต่ละรายการ
+# - REQ-07: คำนวณยอดรายจ่ายรวมทั้งหมด (total_expense)
+# - REQ-08: นับจำนวนรายการที่มีรายจ่าย มากกว่า 100 บาท (expensive_count) โดยใช้ Counter, for และ if ไม่ใช้ List Comprehension
+# - REQ-09: แสดงจำนวนรายการทั้งหมดด้วย len()
+# - REQ-10: ถ้าไม่มีรายการรายจ่าย โปรแกรมต้องแสดงยอดรวมและจำนวนรายการเป็น 0 โดยไม่เกิด Error
+
+
+expenses = []
+number_expense= int(input("Number of expenses: "))
+total_expense = 0
+expensive_count = 0
+for i in range(number_expense):
+      name = input("Name: ")
+      amount = float(input("Amount: "))
+      expense = {"name": name, "amount": amount}
+      expenses.append(expense) 
+for expense in expenses:
+      print(f"Name :   {expense['name']}, Amount :  {expense['amount']} ")
+      total_expense = total_expense +  expense["amount"]
+      if expense["amount"] > 100:
+         expensive_count = expensive_count +1
+
+print ("Total expenses: ", total_expense )
+print ("Expensive items: ", expensive_count )
+print ("Total items: ", len(expenses) )
+
+
+
+
+
